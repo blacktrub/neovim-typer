@@ -1,11 +1,14 @@
--- TODO: read later
--- https://github.com/clojure-vim/acid.nvim/blob/0236dbf67585816ca7350a87d3dcdda2c063e6d3/lua/acid/forms.lua#L45
 
 local api = vim.api
 local curbuf = 0
 
 local function get_last_command_result()
     return vim.v.shell_error
+end
+
+local function is_typer_installed()
+    vim.fn.systemlist("dict-typer --version")
+    return get_last_command_result() == 0
 end
 
 local function show_error(text)
@@ -41,6 +44,11 @@ local function replace_cur_buf(s, e, lines)
 end
 
 local function nvim_typer()
+    if not is_typer_installed() then
+        show_error("You need to install dict-typer: pip install dict-typer")
+        return
+    end
+
     local start_block, _ = unpack(api.nvim_buf_get_mark(curbuf, '<'))
     local end_block, _ = unpack(api.nvim_buf_get_mark(curbuf, '>'))
     local json = read_current_buf(start_block - 1, end_block)
