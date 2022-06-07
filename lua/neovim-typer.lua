@@ -1,4 +1,3 @@
-
 local api = vim.api
 local curbuf = 0
 
@@ -43,7 +42,7 @@ local function replace_cur_buf(s, e, lines)
     api.nvim_buf_set_lines(curbuf, s, e, true, lines)
 end
 
-local function nvim_typer()
+local function neovim_typer()
     if not is_typer_installed() then
         show_error("You need to install dict-typer: pip install dict-typer")
         return
@@ -60,5 +59,5 @@ local function nvim_typer()
 end
 
 return {
-  nvim_typer = nvim_typer,
+  neovim_typer = neovim_typer,
 }

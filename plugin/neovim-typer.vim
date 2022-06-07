@@ -4,7 +4,7 @@ let s:save_cpo = &cpo " save user coptions
 set cpo&vim " reset them to defaults
 
 " command to run our plugin
-command! NvimTyper lua require'nvim-typer'.nvim_typer()
+command! NvimTyper lua require'neovim-typer'.neovim_typer()
 
 let &cpo = s:save_cpo " and restore after
 unlet s:save_cpo
