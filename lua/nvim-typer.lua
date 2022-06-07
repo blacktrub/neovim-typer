@@ -14,7 +14,7 @@ end
 
 local function json_to_python_dict(str)
     -- TODO: check errors
-    local lines = vim.fn.systemlist(string.format('echo \'%s\' | dict-typer', str))
+    local lines = vim.fn.systemlist(string.format('echo \'%s\' | dict-typer --no-imports', str))
     return lines
 end
 
