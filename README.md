@@ -2,7 +2,8 @@
 This is a plugin which can help you to convert your JSON data to python typed dicts right in neovim
 
 ## Demo
-Soon
+![neovimtyper-preview](https://user-images.githubusercontent.com/16855504/172717196-f95ea7b2-3db2-48e5-9fe0-f1bac910c866.gif)
+
 
 ## Before you go 
 You need to install [the program](https://github.com/ikornaselur/dict-typer) for being able to transform your json to python types.
